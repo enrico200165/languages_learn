@@ -1,7 +1,0 @@
-Key for browser apps (with referers)
-API key: 	
-AIzaSyB_txqfYgwZi9Om3T3lo0lTDVUP8wB9sJ0
-Referers: 	
-Any referer allowed
-Activated on: 	Jun 28, 2012 12:43 AM
-Activated by: 	enrico200165@gmail.com – you 

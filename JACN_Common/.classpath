@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="V:/data/pers_dev/00_libs/enrico-libs/java/EVUtils.jar"/>
-	<classpathentry kind="lib" path="V:/data/pers_dev/00_libs/3rd_party_libs/java/log4j-1.2.15.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="bin"/>
-</classpath>
