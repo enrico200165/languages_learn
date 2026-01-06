@@ -4,12 +4,17 @@ import datetime
 from typing import List, Set, Tuple, Optional
 
 from aqt import mw
-from aqt.qt import QAction, QFileDialog
-from aqt.utils import showInfo, showCritical, getText, getItem
+from aqt.utils import showInfo, showCritical
+
+from PyQt6.QtGui import QAction
+from PyQt6.QtWidgets import QFileDialog, QInputDialog
 
 
-ADDON_NAME = "didactic_import_vals"
-LOG_FILENAME = "didactic_import_vals.log"
+ADDON_NAME = "ebwlitduf" # enrico200165's basic wordlist input to deck (in) user (field)
+LOG_FILENAME = "ebwlitduf.log"
+
+MARKER_PREFIX = "###-must-fill: "
+MARKER_SUFFIX = ""
 
 
 def _addon_dir() -> str:
@@ -42,16 +47,16 @@ def _read_vals_from_file(path: str) -> List[str]:
     return vals
 
 
-_HASH_WRAPPED_RE = re.compile(r"^\s*##(.*?)##\s*$", re.DOTALL)
-
+# _HASH_WRAPPED_RE = re.compile(r"^\s*##EV:fill card for: (.*?)##\s*$", re.DOTALL)
+_HASH_WRAPPED_RE = re.compile(r"^\s*"+MARKER_PREFIX+"(.*?)"+MARKER_SUFFIX+r"\s*$", re.DOTALL)
 
 def _normalize_field_value(field_value: str) -> str:
     """
-    Normalizzare il contenuto del campo per confrontarlo con val.
+    Normalize field content (remove markers) to check it.
 
-    Regola:
-    - se è nel formato ##...##, estrarre il contenuto interno
-    - altrimenti usare il valore così com’è, con trim spazi
+    Rule:
+    - if it's embedded in the marker extract the value from the marker
+    - else use the value as it is, trimming the spaces
     """
     if field_value is None:
         return ""
@@ -59,6 +64,7 @@ def _normalize_field_value(field_value: str) -> str:
     m = _HASH_WRAPPED_RE.match(s)
     if m:
         return (m.group(1) or "").strip()
+
     return s
 
 
@@ -74,6 +80,22 @@ def _get_model_by_name(model_name: str):
         return mw.col.models.by_name(model_name)
     except Exception:
         return None
+
+
+def _get_model_field_names(model_name: str) -> List[str]:
+    """
+    Restituire i nomi dei campi disponibili nel modello (Note Type).
+    """
+    model = _get_model_by_name(model_name)
+    if not model:
+        return []
+    try:
+        # In Anki, model["flds"] è una lista di dict, ciascuno con chiave "name"
+        fields = model.get("flds", [])
+        names = [f.get("name", "").strip() for f in fields if f.get("name", "").strip()]
+        return sorted(names)
+    except Exception:
+        return []
 
 
 def _collect_existing_vals(deck_name: str, field_name: str, model_name: str) -> Set[str]:
@@ -113,24 +135,25 @@ def _collect_existing_vals(deck_name: str, field_name: str, model_name: str) -> 
 
 def _create_note(deck_id: int, model_name: str, field_name: str, val: str) -> Tuple[bool, str]:
     """
-    Creare una nuova nota nel deck_id, usando il modello model_name,
-    impostando field_name = ##val##.
+    Create a new note in the deck identified by deck_id, using the model with name model_name,
+    setting the field value embedded in the markers.
 
     Ritorna: (ok, message)
     """
     model = _get_model_by_name(model_name)
     if not model:
-        return (False, f'Modello non trovato: "{model_name}"')
+        return (False, f'Not found model: "{model_name}"')
 
     try:
         note = mw.col.new_note(model)
     except Exception as e:
-        return (False, f'Impossibile creare new_note() per modello "{model_name}": {e}')
+        return (False, f'Not possible to create new note for model "{model_name}": {e}')
 
     if field_name not in note:
-        return (False, f'Campo "{field_name}" non presente nel modello "{model_name}"')
+        return (False, f'Field "{field_name}" not present in model "{model_name}"')
 
-    note[field_name] = f"##{val}##"
+    # note[field_name] = f"##{val}##"
+    note[field_name] = MARKER_PREFIX+f"{val}"+MARKER_SUFFIX
 
     try:
         mw.col.add_note(note, deck_id)
@@ -139,27 +162,29 @@ def _create_note(deck_id: int, model_name: str, field_name: str, val: str) -> Tu
         return (False, f'add_note fallito: {e}')
 
 
+
 def _choose_deck_name() -> Optional[str]:
     try:
         deck_names = sorted([d["name"] for d in mw.col.decks.all_names_and_ids()])
     except Exception:
-        # Fallback per API meno recente: usare deckNames()
         deck_names = sorted(mw.col.decks.all_names())
 
     if not deck_names:
         return None
 
-    chosen, ok = getItem(
-        parent=mw,
-        title="Selezione deck",
-        prompt="Selezionare il deck in cui verificare e creare le note:",
-        items=deck_names,
-        current=0,
-        editable=False,
+    choice, ok = QInputDialog.getItem(
+        mw,
+        "Selezione deck",
+        "Selezionare il deck in cui verificare e creare le note:",
+        deck_names,
+        0,
+        False,
     )
+
     if not ok:
         return None
-    return chosen
+    return choice
+
 
 
 def _choose_model_name() -> Optional[str]:
@@ -167,28 +192,42 @@ def _choose_model_name() -> Optional[str]:
     if not model_names:
         return None
 
-    chosen, ok = getItem(
-        parent=mw,
-        title="Selezione modello (Note Type)",
-        prompt="Selezionare il modello (Note Type) da usare per le nuove note:",
-        items=model_names,
-        current=0,
-        editable=False,
+    choice, ok = QInputDialog.getItem(
+        mw,
+        "Selezione modello (Note Type)",
+        "Selezionare il modello (Note Type) da usare per le nuove note:",
+        model_names,
+        0,
+        False,
     )
+
     if not ok:
         return None
-    return chosen
+    return str(choice)
 
 
-def _ask_field_name() -> Optional[str]:
-    field_name, ok = getText(
-        parent=mw,
-        title="Campo da controllare/valorizzare",
-        prompt='Inserire il nome del campo (es. "Front", "Back", "campo"):',
+def _ask_field_name(model_name: str) -> Optional[str]:
+    field_names = _get_model_field_names(model_name)
+    if not field_names:
+        showCritical(
+            "Impossibile ottenere la lista dei campi dal modello selezionato.\n"
+            "Verificare che il modello esista e che abbia almeno un campo."
+        )
+        return None
+
+    choice, ok = QInputDialog.getItem(
+        mw,
+        "Selezione campo",
+        "Selezionare il campo da controllare/valorizzare:",
+        field_names,
+        0,
+        False,
     )
+
     if not ok:
         return None
-    field_name = (field_name or "").strip()
+
+    field_name = str(choice).strip()
     if not field_name:
         return None
     return field_name
@@ -220,7 +259,7 @@ def run_import_vals() -> None:
     if not model_name:
         return
 
-    field_name = _ask_field_name()
+    field_name = _ask_field_name(model_name)
     if not field_name:
         return
 
@@ -303,7 +342,7 @@ def run_import_vals() -> None:
 
 
 def _setup_menu() -> None:
-    action = QAction("Didactic: Import VAL file e crea note mancanti", mw)
+    action = QAction("txt->deck,model,field", mw)
     action.triggered.connect(run_import_vals)
     mw.form.menuTools.addAction(action)
 
