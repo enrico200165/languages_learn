@@ -146,9 +146,7 @@ print(f"Note trovate: {len(note_ids)}")
 Esempio:
 
 ```
-note_ids = col.find_notes(
-    "tag:da_controllare"
-)
+note_ids = col.find_notes("tag:da_controllare")
 ```
 
 ---
@@ -158,9 +156,7 @@ note_ids = col.find_notes(
 Esempio:
 
 ```
-note_ids = col.find_notes(
-    "deck:Tedesco"
-)
+note_ids = col.find_notes("deck:Tedesco")
 ```
 
 ---
@@ -170,9 +166,7 @@ note_ids = col.find_notes(
 Esempio:
 
 ```
-note_ids = col.find_notes(
-    "note:Vocabulary"
-)
+note_ids = col.find_notes("note:Vocabulary")
 ```
 
 ---
@@ -182,9 +176,7 @@ note_ids = col.find_notes(
 Esempio:
 
 ```
-note_ids = col.find_notes(
-    "deck:Tedesco tag:da_controllare"
-)
+note_ids = col.find_notes("deck:Tedesco tag:da_controllare")
 ```
 
 ---
@@ -222,9 +214,7 @@ Una ricerca restituisce ID.
 Per ottenere la nota:
 
 ```
-note = col.get_note(
-    note_id
-)
+note = col.get_note(note_id)
 ```
 
 Esempio:
@@ -232,9 +222,7 @@ Esempio:
 ```
 note_ids = col.find_notes("")
 
-note = col.get_note(
-    note_ids[0]
-)
+note = col.get_note(note_ids[0])
 ```
 
 ---
@@ -246,9 +234,7 @@ Prima di leggere o scrivere conviene controllare i campi presenti.
 Esempio:
 
 ```
-print(
-    note.keys()
-)
+print(note.keys())
 ```
 
 Output possibile:
@@ -298,10 +284,7 @@ def get_field_safe(
     field_name
 ):
 
-    if (
-        field_name
-        not in note.keys()
-    ):
+    if (field_name not in note.keys()):
         raise KeyError(
             f"Campo mancante: "
             f"{field_name}"
@@ -313,10 +296,7 @@ def get_field_safe(
 Uso:
 
 ```
-word = get_field_safe(
-    note,
-    "Word"
-)
+word = get_field_safe(note, "Word")
 ```
 
 ---
@@ -352,9 +332,7 @@ Esempio:
 ```
 note["Translation"] = "andare"
 
-note["Examples"] = (
-    "Ich gehe nach Hause."
-)
+note["Examples"] = ("Ich gehe nach Hause.")
 
 note.flush()
 ```
@@ -370,9 +348,7 @@ Esempio:
 ```
 if not note["Examples"].strip():
 
-    print(
-        "Campo Examples vuoto"
-    )
+    print("Campo Examples vuoto")
 ```
 
 ---
@@ -382,15 +358,11 @@ if not note["Examples"].strip():
 Trovare note senza esempi.
 
 ```
-note_ids = col.find_notes(
-    "deck:Tedesco"
-)
+note_ids = col.find_notes("deck:Tedesco")
 
 for note_id in note_ids:
 
-    note = col.get_note(
-        note_id
-    )
+    note = col.get_note(note_id)
 
     if ("Examples" not in note.keys() ):
         continue
@@ -468,9 +440,7 @@ Esempio:
 ```
 if (not note["Examples"].strip()):
 
-    note["Examples"] = (
-        generated_examples
-    )
+    note["Examples"] = (generated_examples)
 
     note.flush()
 ```
@@ -688,4 +658,4 @@ Searching https://docs.ankiweb.net/searching.html
 
 Python API Documentation https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
 
-evread: 1
+evread: 2

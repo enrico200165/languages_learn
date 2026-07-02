@@ -28,9 +28,7 @@ Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti 
 
 #### Trasferibilità
 
-Una parola è trasferibile quando può essere utilizzata in molti contesti diversi.
-
-
+Una parola è trasferibile quando può essere utilizzata in molti contesti diversi.  
 Alta trasferibilità, esempi:  
 fare, andare, vedere, problema, soluzione, tempo, persona 
 
@@ -65,9 +63,9 @@ conoscendo un certo numero di lemmi
 ```
 
 Supporre di leggere un articolo di giornale. Se si conoscono:  
- 100 lemmi: la maggior parte del testo sarà incomprensibile,   
-1000 lemmi *molto frequenti*: una parte significativa del testo diventa riconoscibile.  
-3000 lemmi: gran parte del testo può essere compresa
+- 100 lemmi: la maggior parte del testo sarà incomprensibile,   
+- 1000 lemmi *molto frequenti*: una parte significativa del testo diventa riconoscibile.  
+- 3000 lemmi: gran parte del testo può essere compresa
 
 La relazione **non** è lineare.  
 
@@ -90,8 +88,7 @@ Le parole successive continuano a essere utili ma con benefici progressivamente 
 
 ### Core-1000  
 
-Core-1000 indica i 1000 lemmi più frequenti di una lingua.
-
+Core-1000 indica i 1000 lemmi più frequenti di una lingua.  
 Comprende normalmente:
 
 * articoli;
@@ -106,7 +103,7 @@ Comprende normalmente:
 
 #### Benefici
 
-Permette di:
+Permette di:  
 
 * comprendere frasi semplici;
 * sostenere interazioni molto basilari;
@@ -114,7 +111,7 @@ Permette di:
 
 ---
 
-#### Limiti
+#### Limiti  
 
 La comprensione resta frammentaria.
 
@@ -171,7 +168,7 @@ Permette:
 
 #### Problema
 
-Lo sforzo richiesto aumenta significativamente.
+Lo sforzo richiesto aumenta significativamente.  
 Molti studenti raggiungono un ottimo livello pratico molto prima.
 
 ---
@@ -201,4 +198,4 @@ Se fosse necessario scegliere un solo obiettivo iniziale, la scelta più ragione
 
 
 
-read: 4
+read: 5

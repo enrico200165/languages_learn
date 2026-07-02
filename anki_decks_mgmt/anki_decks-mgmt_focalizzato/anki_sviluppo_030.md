@@ -2201,4 +2201,4 @@ Wiktionary Frequency Lists
 [1]: https://docs.cloud.google.com/translate/docs/reference/rest?utm_source=chatgpt.com "Cloud Translation API"
 
 
-evread: 1
+evread: 2

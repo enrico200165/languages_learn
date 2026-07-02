@@ -82,8 +82,8 @@ Fonte: MDN - https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Vid
 
 #### WebVTT: Modello dati
 
-WebVTT lavora con cue temporizzati.
-Un cue è un blocco associato a un intervallo temporale.
+WebVTT lavora con cue temporizzati.  
+Un ***cue temporizzato*** è un blocco associato a un intervallo temporale.
 
 Rispetto a SRT, WebVTT può gestire meglio:
 
@@ -111,7 +111,7 @@ L’indicazione `<v John>` segnala che il cue è pronunciato dal parlante John. 
 
 WebVTT è usato nel web tramite l’elemento HTML `<track>`.
 
-Un elemento `<track>` non è il file dei sottotitoli. È un tag HTML inserito dentro `<video>` o `<audio>` per collegare il media a una traccia testuale temporizzata.
+Un elemento `<track>` è un tag HTML inserito dentro `<video>` o `<audio>` per collegare il media a una traccia testuale temporizzata.
 
 Nella forma più comune, il tag `<track>` punta a un file esterno `.vtt` tramite l’attributo `src`.
 
@@ -209,7 +209,9 @@ Esempio con metadati:
 
 Una traccia `metadata` normalmente non viene mostrata come sottotitolo. Può però essere letta via JavaScript per sincronizzare eventi con il video, per esempio mostrare titoli di capitoli, immagini, quiz o note.
 
-Il fatto che HTML usi `<track>` non significa che ogni piattaforma esponga sempre un file `.vtt` separato all’utente. Nel caso standard HTML/WebVTT, la traccia è normalmente un file esterno indicato con `src`. Piattaforme video più complesse possono invece gestire sottotitoli e captions internamente, tramite interfacce proprie, API o sistemi di conversione.
+Il fatto che HTML usi `<track>` non significa che ogni piattaforma esponga sempre un file `.vtt` separato all’utente.  
+Nel caso standard HTML/WebVTT, la traccia è normalmente un file esterno indicato con `src`.  
+Piattaforme video più complesse possono invece gestire sottotitoli e captions internamente, tramite interfacce proprie, API o sistemi di conversione.
 
 MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.
 Fonte: MDN - https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format
@@ -257,7 +259,7 @@ WebVTT è ottimo se si vuole:
 
 ### Limiti
 
-Il singolo file WebVTT non è il modo più pulito per contenere molte lingue parallele nello stesso documento.
+Il singolo file WebVTT non è il modo più pulito per contenere molte lingue parallele nello stesso documento.  
 Il modello naturale è: più file, uno per traccia.
 
 Per esempio:
@@ -284,7 +286,7 @@ In HTML standard, questo significa associare più elementi `<track>` allo stesso
 
 ### Valutazione
 
-WebVTT è il formato migliore per applicazioni web didattiche multilingua, soprattutto quando servono più tracce sincronizzate con lo stesso audio o video, integrazione con player HTML5 e possibilità di usare JavaScript per costruire attività interattive.
+**WebVTT è il formato migliore per applicazioni web didattiche multilingua**, soprattutto quando servono più tracce sincronizzate con lo stesso audio o video, integrazione con player HTML5 e possibilità di usare JavaScript per costruire attività interattive.
 
 ---
 
@@ -916,4 +918,4 @@ deep-translator
 [https://deep-translator.readthedocs.io/en/stable/README.html](https://deep-translator.readthedocs.io/en/stable/README.html)
 
 
-read 4
+read 5

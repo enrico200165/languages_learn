@@ -76,9 +76,8 @@ Non sono però la misura normalmente utilizzata quando si parla del vocabolario 
 
 ### Secondo livello: forma lessicale
 
-Consideriamo il verbo tedesco: `gehen`. 
+Consideriamo il verbo tedesco: `gehen`.  
 Forme possibili: `gehen gehe gehst geht ging gegangen gehend`  
-
 7 forme lessicali
 
 In questo approccio ogni forma viene contata separatamente.
@@ -86,8 +85,7 @@ In questo approccio ogni forma viene contata separatamente.
 
 Consideriamo il verbo Giapponese: `食べる`.  
 Forme: `食べる 食べます 食べた 食べない 食べて 食べよう 食べられる`  
-
-Anche qui ogni forma viene contata come elemento distinto.
+Anche qui ogni forma viene contata come elemento distinto.  
 
 Se si usa questo criterio, il numero di "parole" esplode rapidamente.
 
@@ -225,4 +223,4 @@ e per la maggior parte delle lingue supportate dal sistema.
 ---
 
 
-read: 4
+read: 5

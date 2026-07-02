@@ -2,19 +2,15 @@
 
 ## Obiettivo della lezione
 
-L'obiettivo principale non è creare subito add-on Anki tradizionali.
+L'obiettivo principale non è creare add-on Anki tradizionali.
 
 L'obiettivo è costruire pipeline Python capaci di:
 
-* creare deck Anki partendo da liste esterne di parole;
-* leggere parole da file TXT, CSV, JSON o altre sorgenti;
+* creare deck Anki partendo da liste esterne di parole (file TXT, CSV, JSON o altre sorgenti) audio o video
 * filtrare le parole in base alla frequenza d'uso;
 * generare contenuti linguistici tramite servizi online o IA;
 * aggiungere frasi di esempio, traduzioni, definizioni, note grammaticali e coniugazioni;
-* esaminare deck Anki già esistenti;
-* popolare campi mancanti;
-* correggere campi errati;
-* aggiornare note esistenti in modo controllato;
+* esaminare deck Anki già esistenti per validazione, arricchimento, inserimento di altre entries;
 * trasformare lo stesso codice, se necessario, in un add-on Anki.
 
 Il punto chiave è questo:
@@ -74,33 +70,6 @@ elaborazione:
 output:
     note Anki nuove o aggiornate
 ```
-
----
-
-## Perché sviluppare prima fuori da Anki
-
-Lavorare direttamente dentro Anki non è il metodo migliore per questo obiettivo.
-
-Quando si sviluppa direttamente come add-on:
-
-* spesso è necessario riavviare Anki dopo modifiche al codice;
-* il debugging è più scomodo;
-* i test automatici sono più difficili;
-* le chiamate a servizi online sono più difficili da controllare;
-* eventuali errori possono agire direttamente sulla collezione reale;
-* è più facile confondere codice applicativo e codice di integrazione.
-
-Per generazione e correzione massiva di deck è preferibile sviluppare prima script Python esterni.
-
-Uno script esterno può:
-
-* aprire una copia della collezione;
-* elaborare migliaia di note;
-* usare log dettagliati;
-* salvare report;
-* essere eseguito più volte;
-* essere testato senza aprire Anki;
-* essere integrato successivamente in un add-on.
 
 ---
 
@@ -220,8 +189,9 @@ note.flush()
 
 Questa somiglianza permette di scrivere codice riutilizzabile.
 
-Il codice migliore non dovrebbe dipendere direttamente da `mw`.  
-Dovrebbe ricevere una collezione come parametro.
+Il codice migliore 
+- non dovrebbe dipendere direttamente da `mw`.  
+- dovrebbe ricevere una collezione come parametro.
 
 Esempio:
 
@@ -238,6 +208,34 @@ La stessa funzione potrà essere usata:
 
 * da uno script esterno;
 * da un add-on Anki.
+
+---
+
+## Perché sviluppare prima fuori da Anki
+
+Lavorare direttamente dentro Anki non è il metodo migliore per questo obiettivo.
+
+Quando si sviluppa direttamente come add-on:
+
+* spesso è necessario riavviare Anki dopo modifiche al codice;
+* il debugging è più scomodo;
+* i test automatici sono più difficili;
+* le chiamate a servizi online sono più difficili da controllare;
+* eventuali errori possono agire direttamente sulla collezione reale;
+* è più facile confondere codice applicativo e codice di integrazione.
+
+Per generazione e correzione massiva di deck è preferibile sviluppare prima script Python esterni, cioè non in forma di add-on.
+
+Uno script esterno può:
+
+* aprire una copia della collezione;
+* elaborare migliaia di note;
+* usare log dettagliati;
+* salvare report;
+* essere eseguito più volte;
+* essere testato senza aprire Anki;
+* essere integrato successivamente in un add-on.
+
 
 ---
 
@@ -281,7 +279,7 @@ Esempio Windows:
 C:\Users\NOME_UTENTE\AppData\Roaming\Anki2\NOME_PROFILO\collection.anki2
 ```
 
-Durante lo sviluppo non conviene aprire direttamente la collezione reale.  
+Durante lo sviluppo **non conviene aprire direttamente la collezione reale**.  
 Conviene creare una copia.
 
 Esempio:
@@ -347,12 +345,10 @@ oppure:
 una collezione temporanea dedicata
 ```
 
-Non modificare direttamente il database SQLite con `sqlite3`.
+Non modificare direttamente il database SQLite con `sqlite3`.  
+Usare sempre le API Anki.  
 
-Usare sempre le API Anki.
-
-Riferimento ufficiale sul modulo Python Anki:
-
+Riferimento ufficiale sul modulo Python Anki:  
 https://addon-docs.ankiweb.net/the-anki-module.html
 
 ---
@@ -947,4 +943,4 @@ https://github.com/ankitects/anki/blob/main/docs/development.md
 Anki Python API documentation  
 https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
 
-read: 1
+read: 2

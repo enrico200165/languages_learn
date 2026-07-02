@@ -26,7 +26,7 @@ La corrispondenza tra categorie grammaticali italiane tradizionali e tag UPOS no
 Un treebank UD è un corpus di frasi annotate secondo le regole di Universal Dependencies:  
 per ogni token vengono indicati, tra le altre cose, il tag POS universale, eventuali features morfologiche e le relazioni sintattiche con gli altri token della frase.
 
-La stessa forma grafica può quindi avere tag diversi quando corrisponde a usi grammaticali realmente diversi.  
+**La stessa forma grafica può quindi avere tag diversi quando corrisponde a usi grammaticali realmente diversi**.  
 Per esempio,  
 `che` può essere `PRON` quando funziona da pronome relativo o interrogativo, ma può essere `SCONJ` quando introduce una subordinata completiva;  
 `questo` può essere `DET` in `questo libro` e `PRON` in `questo è interessante`.  
@@ -236,7 +236,7 @@ Particella → PART, solo se non è più appropriato un altro tag
 
 ## Nota operativa importante
 
-Per un database lessicale conviene non usare un solo campo.
+Per un database lessicale conviene usare più campi.
 
 Meglio separare almeno:
 
@@ -281,4 +281,4 @@ Universal Dependencies, PART:
 https://universaldependencies.org/u/pos/PART.html
 
 
-read: 4
+read: 5

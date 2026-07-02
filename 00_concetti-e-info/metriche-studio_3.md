@@ -315,90 +315,7 @@ Questo contesto è essenziale per l’autonomia comunicativa. Le parole più imp
 
 ## 3. Categorie lessicali e parti del discorso
 
-Prima di mappare i contesti in macro-aree lessicali, è necessario chiarire il significato di “categoria lessicale”.
-
-In grammatica italiana tradizionale, le parole vengono classificate in parti del discorso.  
-Le principali sono:
-
-* nome o sostantivo;
-* articolo;
-* aggettivo;
-* pronome;
-* verbo;
-* avverbio;
-* preposizione;
-* congiunzione;
-* interiezione.
-
-Questa classificazione serve per capire che tipo di funzione ha una parola nella frase.
-
-Per esempio:
-
-* casa è un nome;
-* il è un articolo;
-* grande è un aggettivo;
-* lui è un pronome;
-* andare è un verbo;
-* bene è un avverbio;
-* di è una preposizione;
-* e è una congiunzione;
-* ah è una interiezione.
-
-Queste categorie non hanno tutte lo stesso peso nella costruzione di un deck Core 3000.
-
-Per la costruzione di un deck è necessario anche prendere in considerazione le UPOS di UD.  
-
----
-
-## 4. Categorie grammaticali variabili e invariabili
-
-Dal punto di vista grammaticale, le parti del discorso si dividono in variabili e invariabili.
-
-Le parti variabili cambiano forma in base a genere, numero, persona, tempo, modo o altri tratti grammaticali.
-
-Sono variabili:
-
-* nome;
-* articolo;
-* aggettivo;
-* pronome;
-* verbo.
-
-Esempi:
-
-* ragazzo / ragazza / ragazzi / ragazze;
-* il / la / i / le;
-* bello / bella / belli / belle;
-* lui / lei / loro;
-* parlo / parlavi / parleremo.
-
-Le parti invariabili non cambiano forma, o cambiano molto poco.
-
-Sono invariabili:
-
-* avverbio;
-* preposizione;
-* congiunzione;
-* interiezione.
-
-Esempi:
-
-* bene;
-* con;
-* ma;
-* ah.
-
-Questa distinzione è importante per un sistema software, perché le parole variabili richiedono gestione di lemma, flessione e forme derivate.
-
-Per esempio, in italiano andare, vado, vai, andiamo, andato sono forme diverse riconducibili allo stesso lemma andare.
-
-In un deck Core 3000, **di solito conviene contare i lemmi**, non tutte le forme flesse.  
-Tuttavia, per le lingue con forte flessione, come tedesco, latino, russo o greco, è necessario collegare ogni lemma alle principali forme grammaticali.
-
----
-
-## 5. Categorie lessicali e POS  
-
+Prima di mappare i contesti in macro-aree lessicali, è necessario chiarire il significato di “categoria lessicale”.  
 
 ## 5.1 Categorie lessicali nella grammatica italiana
 
@@ -1009,7 +926,7 @@ Devono essere inseriti presto e accompagnati da molte frasi esempio.
 
 ## 13. Cosa rimandare a liste successive
 
-Un Core 3000 deve rimanere generale.
+Un Core 3000 **deve rimanere generale**.
 
 Conviene quindi rimandare a liste specialistiche successive:
 
@@ -1202,4 +1119,4 @@ I passi successivi possono essere:
 * aggiungere deck plug-in per lavoro, tecnologia, sport, salute, attualità e interessi personali.  
 
 
-read: 4
+read: 5
