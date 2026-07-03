@@ -528,3 +528,5 @@ E scrive i risultati in:
 Il master è però già progettato per essere esteso con nuovi step. La logica principale è basata su configurazione, registrazione degli step, runner dedicati, logging centralizzato e risultati standardizzati.
 
 Questa impostazione permette di far crescere progressivamente la pipeline mantenendo separati i compiti: il master coordina, gli step elaborano.
+
+read: 1

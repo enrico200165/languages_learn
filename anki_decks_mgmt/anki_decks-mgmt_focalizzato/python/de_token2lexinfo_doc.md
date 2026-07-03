@@ -12,7 +12,8 @@ Il modulo non deve:
 - generare deck Anki;
 - produrre campi specifici per Anki.
 
-Il suo compito è produrre un oggetto dati coerente e serializzabile. La persistenza nel reference database deve essere gestita da un modulo separato.
+Il suo compito è produrre un oggetto dati coerente e serializzabile.  
+La persistenza nel reference database deve essere gestita da un modulo separato.
 
 ## Funzione top
 
@@ -249,3 +250,5 @@ Limiti principali:
 Regola progettuale:
 
     meglio un campo mancante con warning che un dato non verificato presentato come certo.
+
+read: 1
