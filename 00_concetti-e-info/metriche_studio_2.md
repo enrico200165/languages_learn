@@ -16,9 +16,9 @@ conoscendo un certo numero di lemmi
 ```
 
 Supporre di leggere un articolo di giornale. Se si conoscono:  
- 100 lemmi la maggior parte del testo sarà incomprensibile,   
-1000 lemmi molto frequenti una parte significativa del testo diventa riconoscibile.  
-3000 lemmi gran parte del testo può essere compresa
+- 100 lemmi: la maggior parte del testo sarà incomprensibile,   
+- 1000 lemmi *molto frequenti*: una parte significativa del testo diventa riconoscibile.  
+- 3000 lemmi: gran parte del testo può essere compresa
 
 La relazione **non** è lineare.  
 
@@ -70,7 +70,7 @@ L'apprendimento del vocabolario segue una legge generale:
 rendimento decrescente
 ```
 
-Le prime parole apprese sono estremamente utili.
+Le prime parole apprese sono estremamente utili.  
 Le parole successive continuano a essere utili ma con benefici progressivamente minori.
 
 
@@ -78,8 +78,7 @@ Le parole successive continuano a essere utili ma con benefici progressivamente 
 
 ## Core-1000  
 
-Core-1000 indica i 1000 lemmi più frequenti di una lingua.
-
+Core-1000 indica i 1000 lemmi più frequenti di una lingua.  
 Comprende normalmente:
 
 * articoli;
@@ -92,9 +91,9 @@ Comprende normalmente:
 
 ---
 
-## Benefici
+#### Benefici
 
-Permette di:
+Permette di:  
 
 * comprendere frasi semplici;
 * sostenere interazioni molto basilari;
@@ -102,7 +101,7 @@ Permette di:
 
 ---
 
-## Limiti
+#### Limiti  
 
 La comprensione resta frammentaria.
 
@@ -110,14 +109,14 @@ Molti testi reali risultano ancora difficili.
 
 ---
 
-# Livello Core-2000
+### Livello Core-2000
 
 
 Molti studi considerano questa fascia il punto di **massimo rendimento**.  
 Lo sforzo richiesto è relativamente contenuto mentre  
 il beneficio ottenuto è molto elevato
 
-## Cosa permette di fare
+#### Cosa permette di fare
 
 * seguire conversazioni quotidiane;
 * comprendere dialoghi semplici;
@@ -126,13 +125,13 @@ il beneficio ottenuto è molto elevato
 
 ---
 
-## ROI
+#### ROI
 
 Dal punto di vista del rapporto beneficio / sforzo Core-2000 rappresenta spesso il punto migliore.
 
 ---
 
-# Livello Core-3000
+### Livello Core-3000
 
 è considerato il miglior compromesso. 
 
@@ -146,13 +145,7 @@ Lo studente possiede ormai una **base sufficientemente ampia per imparare nuove 
 
 ---
 
-## Per il progetto software
-
-Se fosse necessario scegliere un solo obiettivo iniziale, la scelta più ragionevole sarebbe: **Core-3000**  
-
----
-
-# Livello Core-5000
+### Livello Core-5000
 
 
 Permette:
@@ -162,14 +155,15 @@ Permette:
 * accesso a una grande quantità di contenuti autentici.
 
 
-## Problema
+#### Problema
 
+Lo sforzo richiesto aumenta significativamente.  
 Lo sforzo richiesto aumenta significativamente.  
 Molti studenti raggiungono un ottimo livello pratico molto prima.
 
 ---
 
-# Oltre Core-5000
+### Oltre Core-5000
 
 A questo punto il lessico diventa sempre più dipendente dagli interessi personali.
 

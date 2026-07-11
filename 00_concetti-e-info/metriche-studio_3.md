@@ -8,7 +8,7 @@ Il deck non deve essere una semplice raccolta di parole frequenti prese da un di
 
 * i contesti comunicativi più ricorrenti;
 * le categorie grammaticali delle parole;
-* il peso comunicativo delle parole nei diversi contesti d’uso.
+* il peso comunicativo delle parole nei diversi contesti d’uso.  
 
 Una parola core è una parola che 
 - ricorre spesso, 
@@ -16,6 +16,8 @@ Una parola core è una parola che
 - permette di costruire molte frasi e 
 - ha un buon rapporto tra sforzo di apprendimento e utilità comunicativa.
 
+Per questo motivo non è sufficiente raccogliere solo nomi concreti come casa, lavoro, treno, ristorante.  
+Un deck realmente utile deve includere anche verbi, aggettivi, avverbi, pronomi, preposizioni, congiunzioni, articoli o determinanti, perché queste parole permettono di costruire frasi, collegare idee, fare domande, spiegare problemi, esprimere opinioni e comprendere testi reali.
 Per questo motivo non è sufficiente raccogliere solo nomi concreti come casa, lavoro, treno, ristorante.  
 Un deck realmente utile deve includere anche verbi, aggettivi, avverbi, pronomi, preposizioni, congiunzioni, articoli o determinanti, perché queste parole permettono di costruire frasi, collegare idee, fare domande, spiegare problemi, esprimere opinioni e comprendere testi reali.
 
@@ -434,29 +436,29 @@ Questa classificazione è utile per l’analisi grammaticale tradizionale, ma in
 
 ## 5.2 Categorie POS in un sistema NLP
 
-In un progetto informatico o NLP, può essere utile adottare una classificazione più tecnica rispetto alla grammatica scolastica: la classificazione UPOS di Universal Dependencies.
+In un progetto informatico o NLP, può essere utile adottare una classificazione più tecnica rispetto alla grammatica scolastica: la classificazione UPOS di Universal Dependencies.  
 
 Riferimento ufficiale: https://universaldependencies.org/u/pos/
 
 La classificazione UPOS distingue 17 categorie principali:
 
-* ADJ: aggettivo;
-* ADP: adposizione, cioè preposizione o postposizione;
-* ADV: avverbio;
-* AUX: verbo ausiliare;
-* CCONJ: congiunzione coordinante;
-* DET: determinante;
-* INTJ: interiezione;
-* NOUN: nome comune;
-* NUM: numerale;
-* PART: particella;
-* PRON: pronome;
-* PROPN: nome proprio;
-* PUNCT: punteggiatura;
-* SCONJ: congiunzione subordinante;
-* SYM: simbolo;
-* VERB: verbo non ausiliare, o verbo lessicale;
-* X: altro elemento, non riconducibile alle categorie precedenti.
+* **ADJ**: aggettivo;
+* **ADP**: adposizione, cioè preposizione o postposizione;
+* **ADV**: avverbio;
+* **AUX**: verbo ausiliare;
+* **CCONJ**: congiunzione coordinante;
+* **DET**: determinante;
+* **INTJ**: interiezione;
+* **NOUN**: nome comune;
+* **NUM**: numerale;
+* **PART**: particella;
+* **PRON**: pronome;
+* **PROPN**: nome proprio;
+* **PUNCT**: punteggiatura;
+* **SCONJ**: congiunzione subordinante;
+* **SYM**: simbolo;
+* **VERB**: verbo non ausiliare, o verbo lessicale;
+* **X**: altro elemento, non riconducibile alle categorie precedenti.
 
 Questa classificazione **non coincide perfettamente con le parti del discorso della grammatica scolastica**. Per esempio, gli articoli non hanno un tag autonomo, ma rientrano normalmente nei determinanti, cioè DET. Inoltre PUNCT e SYM non sono parole in senso grammaticale tradizionale, ma token utili nell’annotazione automatica dei testi.
 
@@ -468,16 +470,13 @@ Dopo aver chiarito le parti del discorso, è possibile introdurre un secondo liv
 
 Queste non coincidono con le parti del discorso.
 
-Le parti del discorso rispondono alla domanda:
+Le parti del discorso rispondono alla domanda:  
+ `Che tipo grammaticale ha questa parola? `
 
-Che tipo grammaticale ha questa parola?
+Le macro-categorie funzionali rispondono invece alla domanda:  
+ `A quale bisogno comunicativo serve questa parola? `  
 
-Le macro-categorie funzionali rispondono invece alla domanda:
-
-A quale bisogno comunicativo serve questa parola?
-
-Per esempio, la parola problema è un nome, ma può appartenere a più macro-categorie funzionali:
-
+Per esempio, la parola problema è un nome, ma può appartenere a più macro-categorie funzionali:  
 * lavoro;
 * vita quotidiana;
 * salute;
@@ -830,6 +829,7 @@ Quota indicativa: circa 210 parole.
 ## 9. Distribuzione consigliata per un deck Core 3000
 
 La seguente distribuzione non deve essere interpretata come un dato assoluto. È una stima operativa utile per progettare un deck bilanciato.  
+La seguente distribuzione non deve essere interpretata come un dato assoluto. È una stima operativa utile per progettare un deck bilanciato.  
 
 Categoria | Peso | Numero indicativo di parole  
 | ------------------------------------------------- | ---: | --------------------------: |
@@ -867,7 +867,7 @@ Un Core 3000 ben costruito dovrebbe contenere, in modo bilanciato:
 * parole interrogative;
 * espressioni fisse molto frequenti.
 
-La quota esatta dipende dalla lingua. Non conviene fissare percentuali rigide valide per tutte le lingue.
+La quota esatta **dipende dalla lingua**. Non conviene fissare percentuali rigide valide per tutte le lingue.
 
 Tuttavia, a livello operativo, un deck Core 3000 dovrebbe controllare almeno questi punti:
 
@@ -1014,7 +1014,7 @@ Devono essere inseriti presto e accompagnati da molte frasi esempio.
 
 ## 13. Cosa rimandare a liste successive
 
-Un Core 3000 deve rimanere generale.
+Un Core 3000 **deve rimanere generale**.
 
 Conviene quindi rimandare a liste specialistiche successive:
 
@@ -1176,12 +1176,10 @@ Il metodo proposto consente di:
 * aggiungere in seguito moduli specialistici;
 * progettare un database lessicale realmente utilizzabile da software.
 
-Il punto centrale è che un deck Core 3000 non deve rispondere solo alla domanda:
+Il punto centrale è che un deck Core 3000 non deve rispondere solo alla domanda:  
+`Quali parole sono frequenti? `  
 
-Quali parole sono frequenti?
-
-Deve rispondere anche a domande più operative:
-
+Deve rispondere anche a domande più operative:  
 * In quali contesti servono?
 * Che funzione grammaticale hanno?
 * Quante frasi permettono di costruire?
@@ -1189,7 +1187,11 @@ Deve rispondere anche a domande più operative:
 * Sono utili per parlare, per capire o per entrambe le cose?
 * Sono adatte a un adulto che deve vivere, lavorare, viaggiare, informarsi e interagire socialmente?
 
-Solo incrociando frequenza, categoria grammaticale, contesto e utilità comunicativa si può ottenere un deck Core 3000 realmente efficace.
+Solo incrociando:  
+- frequenza,  
+- categoria grammaticale,  
+- contesto e utilità comunicativa  
+- si può ottenere un deck Core 3000 realmente efficace.
 
 ---
 
@@ -1205,3 +1207,6 @@ I passi successivi possono essere:
 * aggiungere deck plug-in per lavoro, tecnologia, sport, salute, attualità e interessi personali.
 
 read: 2  
+
+
+read: 5
