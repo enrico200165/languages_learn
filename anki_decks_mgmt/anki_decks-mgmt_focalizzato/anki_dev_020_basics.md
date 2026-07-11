@@ -364,20 +364,12 @@ for note_id in note_ids:
 
     note = col.get_note(note_id)
 
-<<<<<<< HEAD:anki_decks_mgmt/anki_decks-mgmt_focalizzato/anki_dev_020_basics.md
     if ("Examples" not in note.keys()):
         continue
 
     if (not note["Examples"].strip()):
         print(
             f"Nota {note_id} "
-=======
-    if ("Examples" not in note.keys() ):
-        continue
-
-    if (not note["Examples"].strip()):
-        print(f"Nota {note_id} "
->>>>>>> bc41fe47fefa5c612c966a758cfdec880824e167:anki_decks_mgmt/anki_decks-mgmt_focalizzato/anki_sviluppo_020.md
             f"senza esempi"
         )
 ```
@@ -590,13 +582,7 @@ Schema:
 for note_id in note_ids:
 
     try:
-<<<<<<< HEAD:anki_decks_mgmt/anki_decks-mgmt_focalizzato/anki_dev_020_basics.md
         note = col.get_note(note_id)  
-=======
-
-        note = col.get_note(note_id)
-
->>>>>>> bc41fe47fefa5c612c966a758cfdec880824e167:anki_decks_mgmt/anki_decks-mgmt_focalizzato/anki_sviluppo_020.md
         ...
 
     except Exception as e:
@@ -665,7 +651,6 @@ Le API Anki viste in questa lezione costituiranno la base su cui verranno innest
 
 ## Alcuni riferimenti
 
-<<<<<<< HEAD:anki_decks_mgmt/anki_decks-mgmt_focalizzato/anki_dev_020_basics.md
 Anki Python Module  
 https://addon-docs.ankiweb.net/the-anki-module.html
 
@@ -674,12 +659,3 @@ https://docs.ankiweb.net/searching.html
 
 Python API Documentation  
 https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
-=======
-Anki Python Module https://addon-docs.ankiweb.net/the-anki-module.html
-
-Searching https://docs.ankiweb.net/searching.html
-
-Python API Documentation https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
-
-evread: 2
->>>>>>> bc41fe47fefa5c612c966a758cfdec880824e167:anki_decks_mgmt/anki_decks-mgmt_focalizzato/anki_sviluppo_020.md
