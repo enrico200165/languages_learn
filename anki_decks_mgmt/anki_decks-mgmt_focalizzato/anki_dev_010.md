@@ -119,13 +119,7 @@ Si apre direttamente una collezione Anki tramite il modulo `anki`.
 Schema:
 
 ```
-script Python
-    ->
-Collection(path)
-    ->
-collection.anki2
-    ->
-lettura, creazione, modifica note
+script Python -> Collection(path) -> collection.anki2 -> lettura, creazione, modifica note
 ```
 
 Esempio concettuale:
@@ -224,11 +218,9 @@ note["Campo"] = valore
 note.flush()
 ```
 
-Questa somiglianza permette di scrivere codice riutilizzabile.
-
-Il codice migliore non dovrebbe dipendere direttamente da `mw`.
-
-Dovrebbe ricevere una collezione come parametro.
+Questa somiglianza permette di scrivere codice riutilizzabile.  
+Il codice non dovrebbe dipendere direttamente da `mw`.  
+Dovrebbe ricevere una collezione come parametro, chiamiamolo `col`.
 
 Esempio:
 
@@ -274,10 +266,8 @@ Riferimento:
 
 https://github.com/ankitects/anki/blob/main/docs/development.md
 
-Nota importante:
-
-installare `anki` o `aqt` non significa avere Anki desktop aperto.
-
+Nota importante:  
+installare `anki` o `aqt` non significa avere Anki desktop aperto.  
 Significa avere accesso alle librerie Python necessarie per lavorare su una collezione.
 
 ---
@@ -347,28 +337,14 @@ Non aprire la stessa collezione reale mentre Anki è già aperto sullo stesso pr
 
 Durante lo sviluppo usare sempre:
 
-```
-una copia della collezione
-```
+- una copia della collezione oppure  
+- un profilo Anki di test oppure
+- una collezione temporanea dedicata
 
-oppure:
-
-```
-un profilo Anki di test
-```
-
-oppure:
-
-```
-una collezione temporanea dedicata
-```
-
-Non modificare direttamente il database SQLite con `sqlite3`.
-
+Non modificare direttamente il database SQLite con `sqlite3`.  
 Usare sempre le API Anki.
 
-Riferimento ufficiale sul modulo Python Anki:
-
+Riferimento ufficiale sul modulo Python Anki:  
 https://addon-docs.ankiweb.net/the-anki-module.html
 
 ---
@@ -957,22 +933,19 @@ Le API specifiche verranno trattate dopo.
 
 ## Alcuni riferimenti
 
-Writing Anki Add-ons - The anki Module
-
+Writing Anki Add-ons - The anki Module  
 https://addon-docs.ankiweb.net/the-anki-module.html
 
-Writing Anki Add-ons - Editor Setup
-
+Writing Anki Add-ons - Editor Setup  
 https://addon-docs.ankiweb.net/editor-setup.html
 
-Writing Anki Add-ons - Add-on Config
-
+Writing Anki Add-ons - Add-on Config  
 https://addon-docs.ankiweb.net/addon-config.html
 
-Anki development documentation - pre-built Python wheels
-
+Anki development documentation - pre-built Python wheels  
 https://github.com/ankitects/anki/blob/main/docs/development.md
 
-Anki Python API documentation
-
+Anki Python API documentation  
 https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
+
+read: 2

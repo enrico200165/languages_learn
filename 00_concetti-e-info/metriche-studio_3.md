@@ -4,23 +4,34 @@
 
 L’obiettivo è definire un metodo ragionato per costruire un deck lessicale Core 3000, cioè una lista di circa 3000 parole ad alta utilità per l’apprendimento di una lingua straniera.
 
-Il deck non deve essere una semplice raccolta di parole frequenti prese da un dizionario o da un corpus. Deve invece essere costruito tenendo conto di tre elementi:
+Il deck non deve essere una semplice raccolta di parole frequenti prese da un dizionario o da un corpus. Deve tenere conto di tre elementi:
 
 * i contesti comunicativi più ricorrenti;
 * le categorie grammaticali delle parole;
 * il peso comunicativo delle parole nei diversi contesti d’uso.
 
-Una parola core è una parola che ricorre spesso, serve in molti contesti, permette di costruire molte frasi e ha un buon rapporto tra sforzo di apprendimento e utilità comunicativa.
+Una parola core è una parola che 
+- ricorre spesso, 
+- serve in molti contesti, 
+- permette di costruire molte frasi e 
+- ha un buon rapporto tra sforzo di apprendimento e utilità comunicativa.
 
-Per questo motivo non è sufficiente raccogliere solo nomi concreti come casa, lavoro, treno, ristorante. Un deck realmente utile deve includere anche verbi, aggettivi, avverbi, pronomi, preposizioni, congiunzioni, articoli o determinanti, perché queste parole permettono di costruire frasi, collegare idee, fare domande, spiegare problemi, esprimere opinioni e comprendere testi reali.
+Per questo motivo non è sufficiente raccogliere solo nomi concreti come casa, lavoro, treno, ristorante.  
+Un deck realmente utile deve includere anche verbi, aggettivi, avverbi, pronomi, preposizioni, congiunzioni, articoli o determinanti, perché queste parole permettono di costruire frasi, collegare idee, fare domande, spiegare problemi, esprimere opinioni e comprendere testi reali.
 
 ---
 
 ## 2. Contesti di conversazione
 
-Di seguito viene proposta una lista strutturata dei principali contesti comunicativi rilevanti per un adulto di età media che lavora in una multinazionale, ha una vita sociale attiva, pratica sport a livello amatoriale ed è interessato ad attualità, politica ed economia.
+Di seguito viene proposta una lista strutturata dei principali contesti comunicativi rilevanti per 
+- un adulto di età media che 
+- lavora in una multinazionale, 
+- ha una vita sociale attiva, 
+- pratica sport a livello amatoriale ed 
+- è interessato ad attualità, politica ed economia.
 
-La lista è pensata per costruire liste di parole core ad alta utilità. Per questo privilegia contesti ricorrenti, trasversali e linguisticamente produttivi.
+La lista è pensata per costruire liste di parole core ad alta utilità.  
+Per questo privilegia contesti ricorrenti, trasversali e linguisticamente produttivi.
 
 ---
 
@@ -355,8 +366,7 @@ Le interiezioni sono meno centrali in un deck core formale, ma alcune sono utili
 
 ## 4. Categorie grammaticali variabili e invariabili
 
-Dal punto di vista grammaticale, le parti del discorso si dividono in variabili e invariabili.
-
+Dal punto di vista grammaticale, le parti del discorso si dividono in variabili e invariabili.  
 Le parti variabili cambiano forma in base a genere, numero, persona, tempo, modo o altri tratti grammaticali.
 
 Sono variabili:
@@ -419,14 +429,6 @@ Le categorie principali sono nove:
 * **congiunzione**: collega parole, gruppi di parole o frasi;
 * **interiezione**: esprime reazioni, emozioni, richiami o esclamazioni.
 
-Dal punto di vista morfologico, le categorie italiane si dividono in 
-- variabili e 
-- invariabili.
-
-Sono variabili nome, articolo, aggettivo, pronome e verbo, perché possono cambiare forma in base a genere, numero, persona, tempo, modo o altri tratti grammaticali.
-
-Sono invariabili avverbio, preposizione, congiunzione e interiezione, perché normalmente non cambiano forma.
-
 Questa classificazione è utile per l’analisi grammaticale tradizionale, ma in un sistema NLP non è sempre sufficiente. Alcune categorie scolastiche sono troppo generali, mentre altre non coincidono con le categorie usate dai sistemi di annotazione automatica. Per questo, nei progetti informatici si usa spesso una classificazione POS più tecnica, come UPOS di Universal Dependencies.
 
 
@@ -456,7 +458,7 @@ La classificazione UPOS distingue 17 categorie principali:
 * VERB: verbo non ausiliare, o verbo lessicale;
 * X: altro elemento, non riconducibile alle categorie precedenti.
 
-Questa classificazione non coincide perfettamente con le parti del discorso della grammatica scolastica. Per esempio, gli articoli non hanno un tag autonomo, ma rientrano normalmente nei determinanti, cioè DET. Inoltre PUNCT e SYM non sono parole in senso grammaticale tradizionale, ma token utili nell’annotazione automatica dei testi.
+Questa classificazione **non coincide perfettamente con le parti del discorso della grammatica scolastica**. Per esempio, gli articoli non hanno un tag autonomo, ma rientrano normalmente nei determinanti, cioè DET. Inoltre PUNCT e SYM non sono parole in senso grammaticale tradizionale, ma token utili nell’annotazione automatica dei testi.
 
 ---
 
@@ -529,15 +531,16 @@ Un deck Core 3000 deve invece privilegiare:
 
 Per questo si procede in tre passaggi:
 
-1. ridurre i contesti comunicativi a macro-aree lessicali;
+1. ridurre i contesti comunicativi a **macro-aree lessicali**;
 2. assegnare un peso percentuale a ciascuna macro-area;
 3. tradurre il peso in una quota indicativa di parole su un deck Core 3000.
 
 ---
 
-## 8. Macro-categorie lessicali language-agnostic
+## 8. Macro-categorie lessicali language-agnostic  
 
-Le macro-categorie seguenti sono pensate in modo indipendente dalla lingua. Possono essere applicate a italiano, inglese, tedesco, francese, spagnolo, giapponese o altre lingue, con gli opportuni adattamenti.
+Le macro-categorie seguenti sono pensate in modo indipendente dalla lingua.  
+Possono essere applicate a italiano, inglese, tedesco, francese, spagnolo, giapponese o altre lingue, con gli opportuni adattamenti.
 
 ---
 
@@ -589,7 +592,9 @@ Esempi concettuali:
 * sempre;
 * mai.
 
-Questa è la categoria più importante, perché contiene parole ad altissima frequenza e altissima combinabilità.
+**Questa è la categoria più importante**, perché contiene parole 
+- ad altissima frequenza e 
+- altissima combinabilità.
 
 Peso stimato nel Core 3000: 38%.
 
@@ -824,16 +829,18 @@ Quota indicativa: circa 210 parole.
 
 ## 9. Distribuzione consigliata per un deck Core 3000
 
-La seguente distribuzione non deve essere interpretata come un dato assoluto. È una stima operativa utile per progettare un deck bilanciato.
+La seguente distribuzione non deve essere interpretata come un dato assoluto. È una stima operativa utile per progettare un deck bilanciato.  
 
-Categoria | Peso | Numero indicativo di parole
-Categoria A - Funzionale e strutturale | 38% | 1140
-Categoria B - Interazione sociale e comunicazione | 15% | 450
-Categoria C - Vita professionale generale | 15% | 450
-Categoria D - Vita quotidiana e servizi | 15% | 450
-Categoria E - Media, attualità e società | 10% | 300
-Categoria F - Apprendimento e metalinguaggio | 7% | 210
-Totale | 100% | 3000
+Categoria | Peso | Numero indicativo di parole  
+| ------------------------------------------------- | ---: | --------------------------: |
+Categoria A - Funzionale e strutturale | 38% | 1140  
+Categoria B - Interazione sociale e comunicazione | 15% | 450  
+Categoria C - Vita professionale generale | 15% | 450  
+Categoria D - Vita quotidiana e servizi | 15% | 450  
+Categoria E - Media, attualità e società | 10% | 300  
+Categoria F - Apprendimento e metalinguaggio | 7% | 210  
+Totale | 100% | 3000  
+
 
 Questa distribuzione è pensata per evitare due errori frequenti:
 
@@ -1196,3 +1203,5 @@ I passi successivi possono essere:
 * costruire una pipeline da corpora a liste core;
 * creare livelli Core 1000, Core 2000 e Core 3000;
 * aggiungere deck plug-in per lavoro, tecnologia, sport, salute, attualità e interessi personali.
+
+read: 2  

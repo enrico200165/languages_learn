@@ -1,4 +1,3 @@
-Versione completa e rifinita della Lezione 3. Ho mantenuto riferimenti ufficiali aggiornati per Anki, Google Cloud Translation e OpenAI Responses API. ([Google Cloud Documentation][1])
 
 # Lezione 3 - Generare contenuti linguistici con filtri, Google Translate e ChatGPT
 
@@ -13,14 +12,11 @@ Nelle lezioni precedenti sono stati introdotti:
 * la lettura e modifica dei campi;
 * l'analisi di deck esistenti.
 
-In questa lezione viene introdotto il cuore della pipeline:
-
-```
-decidere quali parole elaborare
-generare contenuti linguistici
-validare i risultati
-aggiornare Anki
-```
+In questa lezione viene introdotto il cuore della pipeline:  
+- decidere quali parole elaborare
+- generare contenuti linguistici
+- validare i risultati
+- aggiornare Anki
 
 L'obiettivo non è semplicemente tradurre parole.
 

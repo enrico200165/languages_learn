@@ -25,16 +25,17 @@ Un file di sottotitoli non contiene solo testo. Può contenere, a seconda del fo
 
 Per progettare una pipeline software occorre distinguere tre livelli:
 
-1. Formato sorgente/intermedio
+1. Formato sorgente/intermedio  
    Deve conservare più informazione possibile.
 
-2. Formato di editing
+2. Formato di editing  
    Deve essere comodo da correggere e sincronizzare.
 
-3. Formato di distribuzione
+3. Formato di distribuzione  
    Deve funzionare nei player, nei browser o nelle piattaforme finali.
 
-Errore comune: usare SRT come formato interno principale.
+#### Errore comune  
+Usare SRT come formato interno principale.
 È comodo, ma perde quasi tutte le informazioni strutturate.
 
 ---
@@ -93,7 +94,8 @@ WEBVTT
 
 ### Uso da parte di piattaforme e tool
 
-WebVTT è usato nel web tramite l’elemento HTML track. Un video HTML può avere più track, per esempio una per inglese, una per italiano, una per tedesco, una per captions e una per metadati. MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.
+WebVTT è usato nel web tramite l’elemento HTML track.  
+Un video HTML può avere più track, per esempio una per inglese, una per italiano, una per tedesco, una per captions e una per metadati. MDN documenta l’uso di WebVTT per sottotitoli, captions, capitoli e tracce temporizzate.  
 Fonte: MDN - [https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API/Web_Video_Text_Tracks_Format)
 
 Vimeo supporta SRT e WebVTT e raccomanda WebVTT.
@@ -766,3 +768,6 @@ Argos Translate
 
 deep-translator
 [https://deep-translator.readthedocs.io/en/stable/README.html](https://deep-translator.readthedocs.io/en/stable/README.html)
+
+
+read: 3

@@ -1,23 +1,12 @@
 
 ## Parte 2 - Quanti lemmi conviene imparare e come costruire un vocabolario ad alto ROI
 
-## Obiettivo della lezione
-
-
-* la copertura lessicale;
-* il rapporto tra frequenza e utilità;
-* il concetto di vocabolario core;
-* i livelli Core-1000, Core-2000, Core-3000 e Core-5000;
-* i contesti comunicativi;
-* le categorie lessicali;
-* la progettazione di un sistema automatico di selezione del lessico;
-* le implicazioni specifiche per tedesco e giapponese.
-
 ---
 
-# Il concetto di copertura lessicale
+## Il concetto di copertura lessicale
 
-Quando si legge un testo, non tutte le parole hanno la stessa importanza. Alcune parole compaiono continuamente. Altre compaiono raramente.
+Quando si legge un testo, non tutte le parole hanno la stessa importanza.  
+Alcune parole compaiono continuamente. Altre compaiono raramente.
 
 La copertura lessicale misura:
 
@@ -37,6 +26,42 @@ Le prime parole producono benefici enormemente superiori alle successive.
 
 ---
 
+## Tutte le parole sono ugualmente utili?
+
+No. Due parole con la stessa frequenza possono avere utilità molto diversa.
+
+Esempio:  
+progetto e aerostazione potrebbero avere frequenze simili in alcuni corpora.  
+Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti meno.
+
+---
+
+# Trasferibilità
+
+Una parola è trasferibile quando può essere utilizzata in molti contesti diversi.
+
+
+Alta trasferibilità, esempi:  
+fare, andare, vedere, problema, soluzione, tempo, persona 
+
+
+Bassa trasferibilità, esempi:  
+accelerometro, anestesista, fusoliera
+
+---
+
+## La frequenza non basta
+
+La frequenza è il criterio principale ma non è sufficiente.  
+Una buona parola core dovrebbe avere:
+
+* alta frequenza;
+* alta trasferibilità;
+* elevata capacità combinatoria;
+* utilità comunicativa.
+
+---
+
 # La curva rendimento-sforzo
 
 L'apprendimento del vocabolario segue una legge generale:
@@ -48,9 +73,10 @@ rendimento decrescente
 Le prime parole apprese sono estremamente utili.
 Le parole successive continuano a essere utili ma con benefici progressivamente minori.
 
+
 ---
 
-## Significato
+## Core-1000  
 
 Core-1000 indica i 1000 lemmi più frequenti di una lingua.
 
@@ -87,9 +113,8 @@ Molti testi reali risultano ancora difficili.
 # Livello Core-2000
 
 
-Molti studi considerano questa fascia il punto di massimo rendimento.
-
-lo sforzo richiesto è relativamente contenuto mentre
+Molti studi considerano questa fascia il punto di **massimo rendimento**.  
+Lo sforzo richiesto è relativamente contenuto mentre  
 il beneficio ottenuto è molto elevato
 
 ## Cosa permette di fare
@@ -139,7 +164,7 @@ Permette:
 
 ## Problema
 
-Lo sforzo richiesto aumenta significativamente.
+Lo sforzo richiesto aumenta significativamente.  
 Molti studenti raggiungono un ottimo livello pratico molto prima.
 
 ---
@@ -160,41 +185,6 @@ Esempi:
 
 Qui non esiste più un unico vocabolario ottimale.
 
----
 
-# Tutte le parole sono ugualmente utili?
-
-No. Due parole con la stessa frequenza possono avere utilità molto diversa.
-
-Esempio:  
-progetto e aerostazione potrebbero avere frequenze simili in alcuni corpora.  
-Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti meno.
-
----
-
-# Trasferibilità
-
-Una parola è trasferibile quando può essere utilizzata in molti contesti diversi.
-
-
-Alta trasferibilità, esempi:  
-fare, andare, vedere, problema, soluzione, tempo, persona 
-
-
-Bassa trasferibilità, esempi:  
-accelerometro, anestesista, fusoliera
-
----
-
-# La frequenza non basta
-
-La frequenza è il criterio principale ma non è sufficiente.  
-Una buona parola core dovrebbe avere:
-
-* alta frequenza;
-* alta trasferibilità;
-* elevata capacità combinatoria;
-* utilità comunicativa.
-
-
+read: 3
 

@@ -39,25 +39,13 @@ Per il tipo di progetto che si vuole sviluppare, la maggior parte del lavoro con
 Schema tipico:
 
 ```
-parola
-    ->
-frequenza
-    ->
-generazione contenuti
-    ->
-nota Anki
+parola -> frequenza -> generazione contenuti -> nota Anki
 ```
 
 oppure:
 
 ```
-nota Anki esistente
-    ->
-analisi
-    ->
-completamento
-    ->
-salvataggio
+nota Anki esistente -> analisi -> completamento -> salvataggio
 ```
 
 Per fare questo è necessario saper manipolare correttamente una collezione.
@@ -236,9 +224,7 @@ Una ricerca restituisce ID.
 Per ottenere la nota:
 
 ```
-note = col.get_note(
-    note_id
-)
+note = col.get_note(note_id)
 ```
 
 Esempio:
@@ -246,9 +232,7 @@ Esempio:
 ```
 note_ids = col.find_notes("")
 
-note = col.get_note(
-    note_ids[0]
-)
+note = col.get_note(note_ids[0])
 ```
 
 ---
@@ -260,9 +244,7 @@ Prima di leggere o scrivere conviene controllare i campi presenti.
 Esempio:
 
 ```
-print(
-    note.keys()
-)
+print(note.keys())
 ```
 
 Output possibile:
@@ -366,9 +348,7 @@ Esempio:
 ```
 note["Translation"] = "andare"
 
-note["Examples"] = (
-    "Ich gehe nach Hause."
-)
+note["Examples"] = ("Ich gehe nach Hause.")
 
 note.flush()
 ```
@@ -384,9 +364,7 @@ Esempio:
 ```
 if not note["Examples"].strip():
 
-    print(
-        "Campo Examples vuoto"
-    )
+    print("Campo Examples vuoto")
 ```
 
 ---
@@ -396,26 +374,16 @@ if not note["Examples"].strip():
 Trovare note senza esempi.
 
 ```
-note_ids = col.find_notes(
-    "deck:Tedesco"
-)
+note_ids = col.find_notes("deck:Tedesco")
 
 for note_id in note_ids:
 
-    note = col.get_note(
-        note_id
-    )
+    note = col.get_note(note_id)
 
-    if (
-        "Examples"
-        not in note.keys()
-    ):
+    if ("Examples" not in note.keys()):
         continue
 
-    if (
-        not note["Examples"]
-        .strip()
-    ):
+    if (not note["Examples"].strip()):
         print(
             f"Nota {note_id} "
             f"senza esempi"
@@ -433,9 +401,7 @@ I tag sono utili per tenere traccia dello stato di elaborazione.
 Esempio:
 
 ```
-note.add_tag(
-    "processed"
-)
+note.add_tag("processed")
 
 note.flush()
 ```
@@ -447,9 +413,7 @@ note.flush()
 Esempio:
 
 ```
-note.del_tag(
-    "needs_translation"
-)
+note.del_tag("needs_translation")
 
 note.flush()
 ```
@@ -656,11 +620,7 @@ Schema:
 for note_id in note_ids:
 
     try:
-
-        note = col.get_note(
-            note_id
-        )
-
+        note = col.get_note(note_id)  
         ...
 
     except Exception as e:
@@ -729,14 +689,11 @@ Le API Anki viste in questa lezione costituiranno la base su cui verranno innest
 
 ## Alcuni riferimenti
 
-Anki Python Module
-
+Anki Python Module  
 https://addon-docs.ankiweb.net/the-anki-module.html
 
-Searching
-
+Searching  
 https://docs.ankiweb.net/searching.html
 
-Python API Documentation
-
+Python API Documentation  
 https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
