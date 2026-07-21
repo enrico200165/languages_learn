@@ -1064,9 +1064,10 @@ Di seguito una riscrittura con “svolgimento completo” delle implementazioni 
 
 La sezione è pensata per essere incollata in una dispensa. Il codice è mostrato con indentazione di 4 spazi (senza backticks).
 
-======================================================================
-CONCETTI NON STANDARD: API DI ANKI E PyQt (PRIMA DI CODIFICARE)
-===============================================================
+
+<hr/>  
+CONCETTI NON STANDARD: API DI ANKI E PyQt (PRIMA DI CODIFICARE)  
+<hr/>  
 
 1. Cos’è mw e perché è centrale
 
@@ -3074,3 +3075,6 @@ PROSSIMO MIGLIORAMENTO POSSIBILE (SE SI VUOLE PROSEGUIRE)
 4. Task in background per file molto grandi (approccio più avanzato)
 
 Se si desidera, nel passo successivo si può aggiungere una modalità “aggiornamento se duplicato” con una strategia chiara (chiave di ricerca e campo di merge), mantenendo sempre report e log.
+
+
+read: 1

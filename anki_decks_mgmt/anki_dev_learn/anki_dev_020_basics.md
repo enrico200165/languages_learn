@@ -519,20 +519,13 @@ report = {
     "missing_notes": 0
 }
 
-note_ids = col.find_notes(
-    "deck:Tedesco"
-)
+note_ids = col.find_notes("deck:Tedesco")
 
 for note_id in note_ids:
 
-    note = col.get_note(
-        note_id
-    )
+    note = col.get_note(note_id)
 
-    if (
-        not note["Translation"]
-        .strip()
-    ):
+    if (not note["Translation"].strip()):
         report["missing_translation"] += 1
 
     if (not note["Examples"].strip()):
@@ -587,10 +580,8 @@ for note_id in note_ids:
 
     except Exception as e:
 
-        print(
-            f"Errore nota "
-            f"{note_id}: {e}"
-        )
+        print(f"Errore nota "
+            f"{note_id}: {e}")
 ```
 
 ---

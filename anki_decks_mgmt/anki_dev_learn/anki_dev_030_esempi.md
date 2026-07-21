@@ -2171,31 +2171,24 @@ Il report serve a capire perché una parola è stata elaborata o ignorata.
 
 ## Alcuni riferimenti
 
-Google Cloud Translation API
-
+Google Cloud Translation API  
 [https://docs.cloud.google.com/translate/docs/reference/rest](https://docs.cloud.google.com/translate/docs/reference/rest)
 
-OpenAI API Reference
-
+OpenAI API Reference  
 [https://platform.openai.com/docs/api-reference](https://platform.openai.com/docs/api-reference)
 
-OpenAI Responses API
-
+OpenAI Responses API  
 [https://platform.openai.com/docs/guides/responses](https://platform.openai.com/docs/guides/responses)
 
-Anki Python Module
-
+Anki Python Module  
 [https://addon-docs.ankiweb.net/the-anki-module.html](https://addon-docs.ankiweb.net/the-anki-module.html)
 
-Leipzig Corpora Collection
-
+Leipzig Corpora Collection  
 [https://wortschatz.uni-leipzig.de/en](https://wortschatz.uni-leipzig.de/en)
 
-Wiktionary Frequency Lists
-
+Wiktionary Frequency Lists  
 [https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists](https://en.wiktionary.org/wiki/Wiktionary:Frequency_lists)
 
-[1]: https://docs.cloud.google.com/translate/docs/reference/rest?utm_source=chatgpt.com "Cloud Translation API"
 
 
-evread: 2
+evread: 3

@@ -6,7 +6,12 @@ L'obiettivo principale non è creare add-on Anki tradizionali.
 
 L'obiettivo è costruire pipeline Python capaci di:
 
-* creare deck Anki partendo da liste esterne di parole (file TXT, CSV, JSON o altre sorgenti) audio o video
+* creare deck Anki partendo da  
+  * video, con sottotitoli o senza
+  * audio, eventualmente estratti da video
+  * documeti o files di sottotitoli (eventualmente estratti da audio)
+  * liste esterne di parole, eventualmente prodotte a partire da
+    * testi un vari formati (sottotitoli, file TXT, CSV, JSON o altre sorgenti)  
 * filtrare le parole in base alla frequenza d'uso;
 * generare contenuti linguistici tramite servizi online o IA;
 * aggiungere frasi di esempio, traduzioni, definizioni, note grammaticali e coniugazioni;
@@ -79,12 +84,9 @@ Esistono due modalità principali.
 
 ## Modalità A - sviluppo esterno
 
-È la modalità consigliata.
-
-In questa modalità il codice Python viene eseguito fuori da Anki.
-
-Si apre direttamente una collezione Anki tramite il modulo `anki`.
-
+È la modalità consigliata.  
+In questa modalità il codice Python viene eseguito fuori da Anki.  
+Si apre direttamente una collezione Anki tramite il modulo `anki`.  
 Schema:
 
 ```
@@ -141,8 +143,7 @@ Questa modalità è utile solo quando serve:
 * mostrare messaggi all'utente;
 * integrare il codice nel flusso normale di uso di Anki.
 
-Per il percorso attuale questa modalità è secondaria.
-
+Per il percorso attuale questa modalità è secondaria.  
 Prima deve funzionare bene la pipeline esterna.
 
 ---
@@ -247,14 +248,12 @@ Per sviluppo add-on, completamento automatico e ambiente più completo:
 pip install "aqt[qt6]"
 ```
 
-Riferimento ufficiale:
-
+Riferimento ufficiale:  
 https://addon-docs.ankiweb.net/editor-setup.html
 
 La documentazione Anki indica che i pacchetti Python precompilati possono essere usati anche per creare script da riga di comando che modificano file `.anki2` tramite le librerie Python di Anki.
 
-Riferimento:
-
+Riferimento:  
 https://github.com/ankitects/anki/blob/main/docs/development.md
 
 Nota importante:  
@@ -863,22 +862,7 @@ mw.form.menuTools.addAction(
 
 ---
 
-## Cosa deve contenere questa prima lezione
-
-Questa prima lezione non deve spiegare ancora tutti i dettagli delle API Anki.
-
-Deve fissare l'architettura mentale:
-
-```
-non partire dall'add-on,
-partire dalla pipeline.
-```
-
-Le API specifiche verranno trattate dopo.
-
----
-
-## Regole pratiche
+## Regole pratiche  
 
 1. Lavorare sempre prima fuori da Anki.
 
@@ -925,4 +909,4 @@ https://github.com/ankitects/anki/blob/main/docs/development.md
 Anki Python API documentation  
 https://dev-docs.ankiweb.net/en/latest/api-python-modules.html
 
-read: 2
+read: 3
