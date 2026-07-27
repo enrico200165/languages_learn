@@ -8,6 +8,7 @@ pipe_data/
 *.jpg
 *.mkv
 *.mp4
+!test-data/video/**/*.mp4
 *.avi
 *.srt
 
