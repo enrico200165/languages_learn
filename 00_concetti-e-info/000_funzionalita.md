@@ -1,9 +1,10 @@
 # Prospettiva e Obiettivi
 
-Alcuni esempi informali di obiettivi sono
+Alcuni esempi informali di obiettivi sono  
+
 - generare un deck con i N vocaboli più frequenti in assoluto (cioè secondo una fonte che non ci interessa dato che le frequenze non saranno mai veramente assolute)  
 - dato un testo generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive
-- dato un video/film/audio generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive
+- dato un video/film/audio/testo generare un deck con i vocaboli che in esso hanno frequenza fra M+1 e N, entrambe inclusive. In questo caso il contesto della frequenza ovviamente è il video/film/audio/testo sorgente
 - dato un testo generare un deck con le frasi che in esso hanno frequenza fra M+1 e N, entrambe inclusive
 - dato un testo generare un deck con le frasi che in esso hanno frequenza fra M+1 e N, entrambe inclusive
 - dato un video/film/audio generare un deck le frasi che in esso hanno frequenza fra M+1 e N, entrambe inclusive
@@ -113,74 +114,118 @@ Si può avere a disposizione:
 - documenti di testo
 - Etc.  
 
-Analisi in sezione dedicata,** non qui!**  
+Analisi in sezione dedicata,**non qui!**  
 
 
-### Database informazioni linguistiche (specifico per linguaggio)  
+### Language LEMMA Database  
 
-Contiene, per ogni tipo di entry (sostantivo, aggettivo, preposizione) 
-- informazioni linguistiche indipendenti dalla tecnologia 
+Specifico per un linguaggio, uno e uno solo per un linguaggio.  
+NON dipendente dai decks.  
+
+Contiene, per ogni tipo di entry (sostantivo, aggettivo, preposizione)  
+
+- informazioni linguistiche assolute, cioè indipendenti dalla tecnologia e dai decks
 - informazioni non linguistiche utili alla produzione di decks (entry già presente in altri decks, frequenza entry in un determinato contesto Etc.)
 
 #### obiettivo:  
-Fungere da reference linguistica e operativa
+
+Fungere da reference linguistica e operativa  
+
 - linguistica  
   - tipologia sostantivo, verbo ...
-  - relative ad un lemma (flessione sostantivi tedeschi, coniugazione verbi, frasi di esempio)
+  - informazioni relative ad un lemma (flessione sostantivi tedeschi, coniugazione verbi, frasi di esempio)
 - non linguistica (operativa Etc.)  
   - in quali decks è eventualmente presente un'entry
   - evitare ripetizioni chiamate remote o elaborazioni lente/costose per procurarsi informazioni linguistiche (
     - prima si consulta il DB,  
     - se non ha già le informazioni queste vengono ottenute e memorizzate nel DB)  
-  - frequenza entry in un determinato contesto (relazione 1:n fra entry e contesto, contesto è un attributo testo opaco)
- 
-
+  - frequenza entry in un determinato contesto (relazione 1:n fra entry e contesto, contesto è un attributo testo opaco)  
+  
 #### Flag completezza entry
 
-Può essere utile sapere se un'entry è completa. 
+Può essere utile sapere se un'entry è completa.  
 Il concetto di completezza dipende dal tipo di entry e per un dato tipo di entry può cambiare nel tempo,  
-si ipotizza popolamento incrementale/adattativo. 
-Può quindi utile un flag (o più flags o uno score) di completezza per evitare di ripetere ogni volta un'analisi di completezza.
-Dato che il concetto di completezza è relativo a un istante di tempo il flag dovrebbe includere il timestamp dell'ultimo "completamento".
-
+si ipotizza popolamento incrementale/adattativo.  
+Può essere utile un flag (o più flags o uno score) di completezza per evitare di ripetere ogni volta un'analisi di completezza.
+Dato che il concetto di completezza è relativo a un istante di tempo il flag dovrebbe includere il timestamp dell'ultima verifica di completezza.
 
 #### Requisiti tecnici HL (da migrare in sezione dedicata quando sarà sviluppata)
 
-Il codice che calcola o recupera informazioni linguistiche deve loggare, almeno su files, 
+Il codice che calcola o recupera informazioni linguistiche deve loggare, almeno su files,  
+
 - quali informazioni prende (ex. flessione sostantivo Artz)
 - quando (timestamp/logging) e da quale sorgente le prende (ex. chatGPT, PONS Online Dictionary API)
 
-#### Popolamento reference DB, requisiti funzionali HL 
+#### Popolamento reference DB, requisiti funzionali HL  
 
-Come input si assumono liste di tokens e, in generale, raw input.
+Come input si assumono liste di tokens e, in generale, **raw input**, cioè senza pre-elaborazioni e arrichimenti.  
+Questo è vitale per mantere il software generale.
+Per il raw input dovrebbero essere supportati tutti i più diffusi formati di testo e sottotitoli
 
-il programma di popolamento 
+il programma di popolamento  
+
 - normalizza l'input (nel caso dei vocaboli identifica il lemma)
 - controlla se l'entry normalizzata è già presente
   - se non è presente inserisce l'entry normalizzata
 - controlla se l'entry è completa e se necessario la completa
 
+## Language sentences database
 
-## Pipeline 
+Va trovato un modo di identificare una stessa frase attraverso variazioni diverse,
+ex. "Ciao, come va?" "Come va?" "Come ti va?" "Ciao, come ti va?" "Ciao come ti va"?
+presumibilmente questo richiederà l'applicazione di:  
+
+- stop words
+- un concetto simile alle stop words, più esteso, relativo alle frasi
+
+Forse anzichè scartare le parole superflue e/o opzionali vanno identificate le parole che identificano una frase a prescindere dalle varianti, quindi l'ordine potrebbe essere  non determinante ma aiutare a calcolare uno score di somiglianza, ex.  
+
+- presenza di parole chiave, a prescindere dall'ordine contribuisce un punteggio  
+- sommiglianze nell'ordine, anche solo fra coppie di parole, aumentano il punteggio
+
+## Pipeline  
+
+### Classificazioni files
+
+Probabilmente è vitale una modellazione appropriata da tutti i punti di vista necessari, si tenta qui. Sezione in divenire
+
+tags embeddati nel nome file verranno usati, avranno il formato
+ev<tag>
+
+
+#### files: creazione  
+
+Alcuni files saranno pre-esistenti, altri generati dalla pipeline  
+
+- generati: substring evgen  
+- non generati: nulla
+
+### Tipi di contenuti e formati
+
+Ci saranno almeno 3 livelli:
+- tipo HL: ex. video, audio, testo  
+- formato: ex. mp4, mp3, docx, vtt
+- estensione: uno stesso formato può avere più estensioni
 
 ### Formati
 
 I formati dei dati utilizzati nella pipeline devono essere standardizzati, si ipotizza quanto segue:
 
-##### Formato files .txt
+##### Formato files .txt  
+
 UTF-8 senza BOM, 
 - normalizzare Unicode quando necessario,  
 - conservare correttamente gli a-capo e 
 - gestire in modo esplicito eventuali caratteri di controllo, spazi anomali o simboli non testuali.  
 
-##### Formato sottotitoli primario: 
-VTT 
-vedi analisi in file dedicato a analisi formato sottotitoli
+##### Formato sottotitoli primario:  
 
+VTT  
+vedi analisi in file dedicato a analisi formato sottotitoli
 
 ### Pipeline - Macrosequenza steps
 
-Si tenterà di applicare, ad alto livello una sequenza **concettuale** standard.   
+Si tenterà di applicare, ad alto livello una sequenza **concettuale** standard.  
 
 A livello tecnico tale sequenza potrebbe rilevarsi non la migliore e non si esclude di implementare una pipeline leggermente diversa.
 

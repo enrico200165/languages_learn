@@ -6,12 +6,14 @@ Un `token` è un’unità ottenuta dividendo un testo in elementi analizzabili.
 Di solito corrisponde a una parola o a un segno di punteggiatura, ma non sempre coincide perfettamente con una parola grafica.  
 In UD, per esempio, alcune forme possono essere rappresentate come token superficiali e poi scomposte in più parole sintattiche.
 
-In un sistema NLP, il POS tagging consiste nell’assegnare a ogni token di una frase un’etichetta che ne descrive la categoria grammaticale generale.  
+POS tagging (in un sistema NLP)  
+consiste nell’assegnare a ogni token di una frase un’etichetta che ne descrive la categoria grammaticale generale.  
 Per esempio, nella frase `Il ragazzo legge un libro`, `ragazzo` è un nome, `legge` è un verbo, `un` è un determinante/articolo e `libro` è un nome.
 
 UPOS, cioè Universal Part-of-Speech tags,  
 è l’insieme delle **17 categorie POS universali** definite da `Universal Dependencies`.  
 Serve a rappresentare in modo uniforme le principali categorie grammaticali in lingue diverse.  
+
 Le categorie UPOS sono: `ADJ`, `ADP`, `ADV`, `AUX`, `CCONJ`, `DET`, `INTJ`, `NOUN`, `NUM`, `PART`, `PRON`, `PROPN`, `PUNCT`, `SCONJ`, `SYM`, `VERB`, `X`.
 
 
@@ -39,7 +41,7 @@ Universal Dependencies definisce UPOS come insieme di categorie POS universali; 
 Le features sono informazioni grammaticali più **dettagliate** associate a un token.  
 
 Mentre il tag UPOS indica la categoria generale della parola, per esempio `NOUN`, `VERB`, `ADJ` o `PRON`, le features descrivono proprietà più specifiche della forma usata nella frase:  
-*genere, numero, persona, tempo, modo, grado, caso, tipo di pronome, forma verbale e così via*.
+*genere, numero, persona, tempo, modo, grado, caso, tipo di pronome, forma verbale* e così via.
 
 In Universal Dependencies una feature ha normalmente la forma `Nome=Valore`;  
 più features possono essere combinate con il carattere `|`.  
@@ -48,8 +50,8 @@ Per esempio, in una frase italiana,
 `mangiavamo` può essere annotato come `VERB` con informazioni come `Mood=Ind|Tense=Imp|Person=1|Number=Plur`;  
 `questa` può essere `DET` con features come `Gender=Fem|Number=Sing|PronType=Dem`.  
 
-
-Le features servono quindi a non moltiplicare inutilmente le categorie POS: invece di creare un tag diverso per “nome maschile singolare”, “nome femminile plurale”, “verbo indicativo presente” ecc., si mantiene una categoria UPOS generale e si aggiungono proprietà morfologiche separate. In questo modo l’annotazione resta più regolare, confrontabile tra lingue diverse e utilizzabile dai sistemi NLP.
+Le features servono quindi a non moltiplicare inutilmente le categorie POS:  
+invece di creare un tag diverso per “nome maschile singolare”, “nome femminile plurale”, “verbo indicativo presente” ecc., si mantiene una categoria UPOS generale e si aggiungono proprietà morfologiche separate. In questo modo l’annotazione resta più regolare, confrontabile tra lingue diverse e utilizzabile dai sistemi NLP.
 
 ## Mapping operativo grammatica italiana → UPOS
 
@@ -281,4 +283,4 @@ Universal Dependencies, PART:
 https://universaldependencies.org/u/pos/PART.html
 
 
-read: 5
+read: 6

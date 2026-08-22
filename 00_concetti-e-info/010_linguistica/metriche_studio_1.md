@@ -57,10 +57,8 @@ Du  gehst nach Hause.
 Wir gehen nach Hause.
 ```
 
-Ogni occorrenza di nach e Hause è conteggiata
-
-Ci sono 12 token
-
+Ogni occorrenza, anche di una stessa parola, ad esempio di nach e Hause, è conteggiata,  
+ci sono 12 token.
 
 I token sono utili per:
 
@@ -87,7 +85,7 @@ Consideriamo il verbo Giapponese: `食べる`.
 Forme: `食べる 食べます 食べた 食べない 食べて 食べよう 食べられる`  
 Anche qui ogni forma viene contata come elemento distinto.  
 
-Se si usa questo criterio, il numero di "parole" esplode rapidamente.
+Se si usa questo criterio, il numero di "parole" è alto (##EV: comm.comunque <= al numero di token).
 
 Un singolo verbo può generare:
 
@@ -210,6 +208,8 @@ Esempio:
 }
 ```
 
+##EV:comm per gestire più frequenze la frequenza è meglio modellata come tripla con ambito a cui è relativa, valore e lemma come foreign key
+
 Lo stesso approccio sarà valido per:
 
 * tedesco;
@@ -223,4 +223,4 @@ e per la maggior parte delle lingue supportate dal sistema.
 ---
 
 
-read: 5
+read: 6

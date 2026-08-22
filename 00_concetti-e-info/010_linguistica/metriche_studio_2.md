@@ -41,12 +41,10 @@ Tuttavia progetto è utilizzabile in moltissimi contesti, aerostazione in molti 
 Una parola è trasferibile quando può essere utilizzata in molti contesti diversi.
 
 
-Alta trasferibilità, esempi:  
-fare, andare, vedere, problema, soluzione, tempo, persona 
+**Alta trasferibilità**, esempi: fare, andare, vedere, problema, soluzione, tempo, persona 
 
 
-Bassa trasferibilità, esempi:  
-accelerometro, anestesista, fusoliera
+**Bassa trasferibilità**, esempi: accelerometro, anestesista, fusoliera
 
 ---
 
@@ -179,6 +177,4 @@ Esempi:
 
 Qui non esiste più un unico vocabolario ottimale.
 
-
-read: 3
-
+read: 5
